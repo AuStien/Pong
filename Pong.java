@@ -25,7 +25,9 @@ public class Pong extends Application{
 	 * Score foran ball :((
 	 * Ball plassering ikke random :((
 	 */
-	
+
+	//TODO Sometimes on start ball passes through player, pls fix
+
 	// {sceneWidth, sceneHeight, rectWidth, rectHeight, playerSpeed, player1X, player1Y, ballState}
 	double[] info = {600, 400, 10, 100, 3, 30, 30, 0};
 	boolean hasStarted = false, hasEnded = false;
