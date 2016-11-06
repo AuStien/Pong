@@ -37,17 +37,17 @@ public class Ball{
 		}
 		
 		if (dir == 0){
-			if (ball.getCenterX() >= info[0]){
+			if (ball.getCenterX() - radius >= info[0]){
 				dir = 3;
 			}
-			if (ball.getCenterY() >= info[1]){
+			if (ball.getCenterY() - radius >= info[1]){
 				dir = 1;
 			}
 			ball.setCenterX(ball.getCenterX() + ballSpeed);
 			ball.setCenterY(ball.getCenterY() + ballSpeed);
 		}
 		if (dir == 1){
-			if (ball.getCenterX() >= info[0]){
+			if (ball.getCenterX() - radius >= info[0]){
 				dir = 2;
 			}
 			if (ball.getCenterY() <= radius){
@@ -67,8 +67,9 @@ public class Ball{
 			if (ball.getCenterY() <= radius){
 				dir = 3;
 			}
-			if (ball.getCenterY() - radius >= info[6] && ball.getCenterY() - radius <= info[6] + info[3]
-					&& ball.getCenterX() - radius == info[5] + info[2] && info[7] != 0){
+			if (ball.getCenterY() + radius >= info[6] && ball.getCenterY() - radius <= info[6] + info[3]
+					&& ball.getCenterX() - radius <= info[5] + info[2] && ball.getCenterX() - radius >= info[5]
+                    && info[7] != 0){
 				dir = 1;
 				ballSpeed += ballSpeed < 10 ? 1 : 0;
 				info[4] += ballSpeed < 10 ? 1 : 0;
@@ -90,11 +91,12 @@ public class Ball{
 					ended = true;
 				}
 			}
-			if (ball.getCenterY() >= info[1]){
+			if (ball.getCenterY() - radius >= info[1]){
 				dir = 2;
 			}
-			if (ball.getCenterY() - radius >= info[6] && ball.getCenterY() - radius <= info[6] + info[3]
-					&& ball.getCenterX() - radius == info[5] + info[2] && info[7] != 0){
+			if (ball.getCenterY() + radius >= info[6] && ball.getCenterY() - radius <= info[6] + info[3]
+					&& ball.getCenterX() - radius <= info[5] + info[2] && ball.getCenterX() - radius >= info[5]
+                    && info[7] != 0){
 				dir = 0;
 				ballSpeed += ballSpeed < 10 ? 1 : 0;
 				info[4] += ballSpeed < 10 ? 1 : 0;

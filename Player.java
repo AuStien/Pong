@@ -59,7 +59,7 @@ public class Player{
 			player.setY(info[6] - info[4]);
 			info[6] = info[6] - info[4];
 		}
-		if (down && player.getY() <= info[1] - 90){
+		if (down && player.getY() <= info[1] - 50){
 			player.setY(info[6] + info[4]);
 			info[6] = info[6] + info[4];
 		}
