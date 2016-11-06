@@ -1,4 +1,4 @@
-package pong;
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -40,13 +40,13 @@ public class Pong extends Application{
 	Scene scene = new Scene(root, info[0], info[1]);
 	Player player1 = new Player(1, info);
 	Ball ball = new Ball(info, txtPoints, border);
+	// Frame
 	Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.01), e -> {
 		
 		hasEnded = ball.ended();
-		if (hasEnded){
+		if (hasEnded) {
 			itEnded();
 		}
-		
 		player1.frame();
 		ball.frame();
 	}));
