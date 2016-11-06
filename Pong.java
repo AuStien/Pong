@@ -23,7 +23,9 @@ public class Pong extends Application{
      *      Key Assignment
      *      Custom speed on ball and player
      *      Color
+     * Score on each players side
      */
+    //TODO Fix so ball radius can safely vary
 	//TODO Save high score
 
 	// {0sceneWidth, 1sceneHeight, 2rectWidth, 3rectHeight, 4playerSpeed, 5player1X, 6player1Y, 7ballState}
@@ -112,7 +114,8 @@ public class Pong extends Application{
 
         // Fix up start button and place
 		startBtn.setLayoutX((info[0] / 2) - 55);
-		startBtn.setStyle("-fx-background-color: linear-gradient(#f2f2f2, #d6d6d6), linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%), linear-gradient(#dddddd 0%, #f6f6f6 50%); "
+		startBtn.setStyle("-fx-background-color: linear-gradient(#f2f2f2, #d6d6d6), "
+                + "linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%), linear-gradient(#dddddd 0%, #f6f6f6 50%); "
 				+ "-fx-background-radius: 8,7,6;-fx-background-insets: 0,1,2;-fx-text-fill: black; "
 				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-size: 30px");
 

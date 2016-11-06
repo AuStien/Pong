@@ -37,8 +37,8 @@ public class Ball{
 		}
 		
 		if (dir == 0){
-            // If ball touches left edge, bounce
-			if (ball.getCenterX() - radius >= info[0]){
+            // If ball touches right edge, bounce
+			if (ball.getCenterX() - (radius / 5.0) >= info[0]){
 				dir = 3;
 			}
             // If ball touches bottom edge, bounce
@@ -99,7 +99,7 @@ public class Ball{
 					ended = true;
 				}
 			}
-            // If ball touches right edge, bounce
+            // If ball touches bottom edge, bounce
 			if (ball.getCenterY() - radius >= info[1]){
 				dir = 2;
 			}

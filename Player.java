@@ -16,7 +16,11 @@ public class Player{
 		// Set width and height of player to that in array
         player.setWidth(info[2]);
 		player.setHeight(info[3]);
-		
+
+        // Add curves to player
+        player.setArcHeight(10);
+        player.setArcWidth(10);
+
 		this.info = info;
 
         // Set variables after which player it is
@@ -64,7 +68,7 @@ public class Player{
 		}
 
         // If up is pressed and does not hit top, move up
-		if (down && player.getY() <= info[1] - 50){
+		if (down && player.getY() <= info[1] - (info[3] / 2)){
 			player.setY(info[6] + info[4]);
 			info[6] = info[6] + info[4];
 		}
