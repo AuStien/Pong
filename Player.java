@@ -13,11 +13,13 @@ public class Player{
 	double[] info;
 	
 	public Player(int p, double[] info){
-		player.setWidth(info[2]);
+		// Set width and height of player to that in array
+        player.setWidth(info[2]);
 		player.setHeight(info[3]);
 		
 		this.info = info;
-		
+
+        // Set variables after which player it is
 		if (p == 1){
 			player.setX(info[5]);
 			player.setY(info[6]);
@@ -55,10 +57,13 @@ public class Player{
 	}
 	
 	public void frame(){
+        // If up is pressed and does not hit top, move up
 		if (up && info[6] >= 0){
 			player.setY(info[6] - info[4]);
 			info[6] = info[6] - info[4];
 		}
+
+        // If up is pressed and does not hit top, move up
 		if (down && player.getY() <= info[1] - 50){
 			player.setY(info[6] + info[4]);
 			info[6] = info[6] + info[4];

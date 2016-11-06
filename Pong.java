@@ -17,9 +17,14 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Pong extends Application{
-
+    /*
+     * 4 player (one up, one down OR/AND one on each edge)
+     * Settings?
+     *      Key Assignment
+     *      Custom speed on ball and player
+     *      Color
+     */
 	//TODO Save high score
-    //TODO Add settings menu??
 
 	// {0sceneWidth, 1sceneHeight, 2rectWidth, 3rectHeight, 4playerSpeed, 5player1X, 6player1Y, 7ballState}
 	double[] info = {600, 400, 10, 100, 3, 30, 30, 0};
