@@ -12,7 +12,7 @@ public class Ball{
 	BorderPane border;
 	int points = 0;
 	int dir;
-	int radius = 5;
+	int radius = 20;
 	double ballSpeed = 2; 
 	
 	public Ball(double[] info, Text txtPoints, BorderPane border){
