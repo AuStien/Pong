@@ -142,7 +142,7 @@ public class Pong extends Application{
 		player1.returnNode().setVisible(false);
 		txtPoints.setVisible(false);
 		
-		root.getChildren().addAll(endText);
+		root.getChildren().add(endText);
 	}
 
 	// main class launches JavaFX
