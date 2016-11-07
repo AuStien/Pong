@@ -12,7 +12,7 @@ public class Ball{
 	BorderPane border;
 	int points = 0;
 	int dir;
-	int radius = 20;
+	int radius = 5;
 	double ballSpeed = 2; 
 	
 	public Ball(double[] info, Text txtPoints, BorderPane border){
@@ -38,7 +38,7 @@ public class Ball{
 		
 		if (dir == 0){
             // If ball touches right edge, bounce
-			if (ball.getCenterX() - (radius / 5.0) >= info[0]){
+			if (ball.getCenterX() - radius >= info[0]){
 				dir = 3;
 			}
             // If ball touches bottom edge, bounce
@@ -64,7 +64,7 @@ public class Ball{
             // If ball touches left edge, lose, unless game has not started
 			if (ball.getCenterX() <= radius){
 				if (info[7] == 0){
-					dir = 1;	
+					dir = 1;
 				}else{
 					ended = true;
 				}
@@ -77,7 +77,7 @@ public class Ball{
 			if (ball.getCenterY() + radius >= info[6] && ball.getCenterY() - radius <= info[6] + info[3]
 					&& ball.getCenterX() - radius <= info[5] + info[2] && ball.getCenterX() - radius >= info[5]
                     && info[7] != 0){
-				dir = 1;
+                dir = 1;
 				ballSpeed += ballSpeed < 10 ? 1 : 0;
 				info[4] += ballSpeed < 10 ? 1 : 0;
 				points++;
@@ -94,7 +94,7 @@ public class Ball{
             // If ball touches left edge, lose, unless games has not started
 			if (ball.getCenterX() <= radius){
 				if (info[7] == 0){
-					dir = 0;	
+					dir = 0;
 				}else{
 					ended = true;
 				}
@@ -107,7 +107,7 @@ public class Ball{
 			if (ball.getCenterY() + radius >= info[6] && ball.getCenterY() - radius <= info[6] + info[3]
 					&& ball.getCenterX() - radius <= info[5] + info[2] && ball.getCenterX() - radius >= info[5]
                     && info[7] != 0){
-				dir = 0;
+                dir = 0;
 				ballSpeed += ballSpeed < 10 ? 1 : 0;
 				info[4] += ballSpeed < 10 ? 1 : 0;
 				points++;

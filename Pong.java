@@ -66,7 +66,7 @@ public class Pong extends Application{
 		// Set timeline to run indefinite and start it
         timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
-
+        
         // Events to control player
 		scene.setOnKeyPressed(e -> player1.keyPressed(e));
 		scene.setOnKeyReleased(e -> player1.keyReleased(e));
