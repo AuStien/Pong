@@ -34,27 +34,28 @@ public class Player{
 		if (p == 2){
 			player.setX(info[0] - 30);
 			player.setY(30);
-			info[0] = info[0] - 30;
-			info[1] = info[1] - 30;
-			
 			moveUp = KeyCode.UP;
 			moveDown = KeyCode.DOWN;
 		}
 	}
 	
 	public void keyPressed(KeyEvent e){
+		// If up key is pressed, set up = true
 		if (e.getCode() == moveUp){
 			up = true;
 		}
+		// If down key is pressed, set down = true
 		if (e.getCode() == moveDown){
 			down = true;
 		}
 	}
 	
 	public void keyReleased(KeyEvent e){
+		// If up key is released, set up = false
 		if (e.getCode() == moveUp){
 			up = false;
 		}
+		// If down key is pressed, set down = false
 		if (e.getCode() == moveDown){
 			down = false;
 		}
@@ -67,8 +68,8 @@ public class Player{
 			info[6] = info[6] - info[4];
 		}
 
-        // If up is pressed and does not hit top, move up
-		if (down && player.getY() <= info[1] - (info[3] / 2)){
+        // If down is pressed and does not hit bottom, move down
+		if (down && player.getY() <= info[1] - info[3] + 10){
 			player.setY(info[6] + info[4]);
 			info[6] = info[6] + info[4];
 		}
@@ -76,5 +77,6 @@ public class Player{
 		
 	}
 	
+	// Return Rectangle object
 	public Rectangle returnNode(){ return player; }
 }
